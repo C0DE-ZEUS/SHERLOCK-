@@ -1,0 +1,14 @@
+**/node_modules
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+**/*.tsbuildinfo
+frontend/dist
+frontend/public/ocr
+backend/tests
+sample-files
+*.zip
+.git
+.env
+**/.env

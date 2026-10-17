@@ -1,0 +1,10 @@
+# Render Blueprint: deploys Sherlock as one free Docker web service.
+# In Render: New -> Blueprint -> pick this repository.
+services:
+  - type: web
+    name: sherlock
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true

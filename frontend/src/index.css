@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg font-sans text-fg;
+    font-feature-settings: "cv11", "ss01";
+  }
+  ::selection {
+    @apply bg-accent/30 text-fg;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  /* Glass is reserved for a few elevated panels; dense content uses .panel. */
+  .glass {
+    @apply rounded-2xl border border-line bg-surface/60 shadow-glass backdrop-blur-xl;
+  }
+  .panel {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-accent-ink shadow-[0_8px_24px_-10px_rgba(20,184,166,0.7)] hover:bg-accent-bright active:translate-y-px;
+  }
+  .btn-secondary {
+    @apply btn border border-line-strong bg-white/[0.04] text-fg hover:bg-white/[0.08];
+  }
+  .btn-ghost {
+    @apply btn px-3 py-2 text-fg-muted hover:bg-white/[0.06] hover:text-fg;
+  }
+  .btn-danger {
+    @apply btn bg-danger text-white hover:bg-[#F25555];
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

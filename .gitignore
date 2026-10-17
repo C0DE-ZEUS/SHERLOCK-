@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+.vite/
+npm-debug.log*
+
+# Sherlock temporary uploads and generated outputs
+.sherlock_tmp/
+sherlock-work/
+*-sherlock-redacted.*
+uploads/
+outputs/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated in-browser OCR assets (copied from node_modules)
+frontend/public/ocr/
